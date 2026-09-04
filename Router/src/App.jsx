@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import DashboardLayout from './assets/dashboard/DashboardLayout';
+import Users from './assets/dashboard/Users';
+import UserDetails from './assets/dashboard/UserDetails';
+import DashBoardHome from './assets/dashboard/DashBoardHome';
+
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     eksdks
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashBoardHome />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/:userId" element={<UserDetails />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

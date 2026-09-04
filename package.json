@@ -1,6 +1,9 @@
 {
-  "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "tailwindcss": "^4.3.3"
+  "name": "mystic-reactrouter-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix Router run dev -- --host 0.0.0.0",
+    "build": "npm --prefix Router run build",
+    "preview": "npm --prefix Router run preview -- --host 0.0.0.0"
   }
 }
